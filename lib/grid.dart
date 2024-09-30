@@ -1,43 +1,47 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class iniGrid extends StatelessWidget {
-  iniGrid ({super.key});
+  const iniGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('shaas Widget'),
+        title: const Text('Shass Widget'),
       ),
-      body: Expanded(
-          child: GridView.count(
-            crossAxisCount: 2,
-            childAspectRatio: 182 / 243,
-            mainAxisSpacing: 16,
-            crossAxisSpacing: 16,
-            children: [
-              ...List.generate(
+      body: Container(
+        color: Colors.lightGreenAccent,
+        child: GridView.count(
+          crossAxisCount: 2,
+          childAspectRatio: 185 / 243,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 16,
+          children: [
+            ...List.generate(
                 6,
                 (index) => Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      offset: Offset.zero,
-                      blurRadius: 15.0,
-                      ),
-                    ],
-                    ),
-                  ),
-                ),
-            ],
-          ),
-      )
+                      height: 300,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          color: Colors.pinkAccent,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            image: AssetImage('assets/windah basudara.jfif'),
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                offset: Offset.zero,
+                                blurRadius: 15.0)
+                          ]),
+                    ))
+          ],
+        ),
+      ),
     );
   }
 }
